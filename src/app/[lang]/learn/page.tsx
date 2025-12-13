@@ -32,7 +32,7 @@ export default function Learn({ params }: { params: { lang: Locale } }) {
             <Link href={`/${params.lang}/learn`} className="text-purple-600 font-semibold">
               {isZh ? '教程' : 'Tutorial'}
             </Link>
-            <a href="https://autowds.dtiku.cn/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition">
+            <a href="https://autowds.dtiku.cn/cloud" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition">
               {isZh ? '云服务' : 'Cloud Service'}
             </a>
             <LanguageSwitcher currentLocale={params.lang} />
