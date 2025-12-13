@@ -1,0 +1,147 @@
+{
+  "common": {
+    "features": "Features",
+    "useCases": "Use Cases",
+    "pricing": "Pricing",
+    "tutorial": "Tutorial",
+    "cloudService": "Cloud Service",
+    "installNow": "Install Now",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactSales": "Contact Sales",
+    "freeForever": "Free Forever",
+    "perMonth": "per month",
+    "contactUs": "Contact Us"
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "useCases": "Use Cases",
+    "pricing": "Pricing",
+    "tutorial": "Tutorial",
+    "cloudService": "Cloud Service"
+  },
+  "hero": {
+    "title": "Make Web Data Collection",
+    "titleHighlight": "Simple and Efficient",
+    "description": "Octopus Crawler is a powerful browser extension that enables web scraping, automation, and workflow recording without programming",
+    "downloadFree": "Download Free",
+    "watchDemo": "Watch Demo",
+    "browserSupport": "Supports Chrome, Edge, Firefox and more",
+    "completelyFree": "Completely Free"
+  },
+  "features": {
+    "title": "Powerful Features",
+    "subtitle": "Everything to make data collection easier",
+    "visualSelection": {
+      "title": "Visual Selection",
+      "description": "No coding required, create scraping rules by clicking page elements, what you see is what you get"
+    },
+    "autoPagination": {
+      "title": "Auto Pagination",
+      "description": "Intelligently identifies pagination buttons, automatically traverses all pages, one-click complete data collection"
+    },
+    "multipleFormats": {
+      "title": "Multiple Export Formats",
+      "description": "Export to Excel, CSV, JSON and more formats to meet different needs"
+    },
+    "highSpeed": {
+      "title": "High-Speed Collection",
+      "description": "Multi-threaded concurrent collection, intelligent deduplication, greatly improving data collection efficiency"
+    },
+    "recordActions": {
+      "title": "Action Recording",
+      "description": "Record browser operation workflows, automatically generate repeatable automation scripts"
+    },
+    "loginSupport": {
+      "title": "Login Support",
+      "description": "Supports websites requiring login, automatically handles Cookies and Sessions"
+    },
+    "dynamicPages": {
+      "title": "Dynamic Pages",
+      "description": "Perfect support for modern web pages with Ajax, React, Vue and other dynamic loading"
+    },
+    "scheduledTasks": {
+      "title": "Scheduled Tasks",
+      "description": "Set up scheduled collection tasks, automatically monitor web page changes, get latest data in time"
+    },
+    "cloudSync": {
+      "title": "Cloud Sync",
+      "description": "Collection rules saved in cloud, multi-device sync, use anytime anywhere"
+    }
+  },
+  "useCases": {
+    "title": "Use Cases",
+    "subtitle": "Find the perfect application for your industry",
+    "ecommerce": {
+      "title": "E-commerce Monitoring",
+      "description": "Monitor competitor prices, sales, reviews and adjust your strategy accordingly",
+      "examples": ["Price Monitoring", "Inventory Tracking", "Review Analysis", "Sales Statistics"]
+    },
+    "market": {
+      "title": "Market Research",
+      "description": "Quickly collect industry data, analyze market trends, and support decision-making",
+      "examples": ["Industry Reports", "Competitor Analysis", "User Reviews", "Trend Analysis"]
+    },
+    "content": {
+      "title": "Content Aggregation",
+      "description": "Collect news, articles, and information from multiple websites to build a personalized content platform",
+      "examples": ["News Aggregation", "Article Collection", "Image Download", "RSS Generation"]
+    },
+    "research": {
+      "title": "Academic Research",
+      "description": "Collect papers, patents, literature and other academic materials to assist research work",
+      "examples": ["Paper Collection", "Citation Analysis", "Patent Search", "Data Organization"]
+    },
+    "recruitment": {
+      "title": "Job Information",
+      "description": "Aggregate job information from major recruitment websites to quickly find your dream job",
+      "examples": ["Job Collection", "Salary Analysis", "Company Info", "Industry Trends"]
+    },
+    "realestate": {
+      "title": "Real Estate",
+      "description": "Collect property information, analyze price trends, and assist in home buying decisions",
+      "examples": ["Property Collection", "Price Monitoring", "Area Analysis", "Historical Data"]
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subtitle": "Local extension + Cloud service, flexible to meet different needs",
+    "localPlugin": "Local Browser Extension",
+    "localPluginDesc": "Run directly in your browser, simple and easy to use",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "period": "Forever",
+      "features": ["Basic data collection", "100 records/day", "3 scraping tasks", "Community support", "Basic export formats"],
+      "cta": "Get Started"
+    },
+    "pro": {
+      "name": "Professional",
+      "price": "$15",
+      "period": "per month",
+      "features": ["Unlimited data collection", "Unlimited tasks", "Cloud storage", "Scheduled tasks", "Priority support", "Advanced export options", "API access"],
+      "cta": "Buy Now",
+      "popular": "Most Popular"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Custom",
+      "period": "Contact Us",
+      "features": ["All Pro features", "Private deployment", "Team collaboration", "Dedicated account manager", "Custom development", "SLA guarantee"],
+      "cta": "Contact Sales"
+    }
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "description": "Join tens of thousands of users and make data collection simple and efficient",
+    "button": "Download Octopus Crawler Free"
+  },
+  "footer": {
+    "description": "Make web data collection simple and efficient",
+    "product": "Product",
+    "resources": "Resources",
+    "contact": "Contact",
+    "copyright": "© 2024 Octopus Crawler. All rights reserved."
+  }
+}

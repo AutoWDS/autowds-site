@@ -1,0 +1,147 @@
+{
+  "common": {
+    "features": "功能特性",
+    "useCases": "使用场景",
+    "pricing": "价格",
+    "tutorial": "教程",
+    "cloudService": "云服务",
+    "installNow": "立即安装",
+    "learnMore": "了解更多",
+    "getStarted": "开始使用",
+    "contactSales": "联系销售",
+    "freeForever": "永久免费",
+    "perMonth": "每月",
+    "contactUs": "联系我们"
+  },
+  "nav": {
+    "home": "首页",
+    "features": "功能特性",
+    "useCases": "使用场景",
+    "pricing": "价格",
+    "tutorial": "教程",
+    "cloudService": "云服务"
+  },
+  "hero": {
+    "title": "让网页数据采集",
+    "titleHighlight": "变得简单高效",
+    "description": "Octopus Crawler 是一款强大的浏览器扩展插件，无需编程即可实现网页数据抓取、自动化操作和流程录制",
+    "downloadFree": "免费下载插件",
+    "watchDemo": "观看演示视频",
+    "browserSupport": "支持 Chrome、Edge、Firefox 等主流浏览器",
+    "completelyFree": "完全免费使用"
+  },
+  "features": {
+    "title": "强大的功能特性",
+    "subtitle": "一切为了让数据采集更简单",
+    "visualSelection": {
+      "title": "可视化点选",
+      "description": "无需编写代码，通过点击页面元素即可创建采集规则，所见即所得"
+    },
+    "autoPagination": {
+      "title": "自动翻页",
+      "description": "智能识别分页按钮，自动遍历所有页面，一键采集完整数据"
+    },
+    "multipleFormats": {
+      "title": "多种导出格式",
+      "description": "支持导出为 Excel、CSV、JSON 等多种格式，满足不同需求"
+    },
+    "highSpeed": {
+      "title": "高速采集",
+      "description": "多线程并发采集，智能去重，大幅提升数据采集效率"
+    },
+    "recordActions": {
+      "title": "操作录制",
+      "description": "录制浏览器操作流程，自动生成可重复执行的自动化脚本"
+    },
+    "loginSupport": {
+      "title": "登录支持",
+      "description": "支持需要登录的网站，自动处理 Cookie 和 Session"
+    },
+    "dynamicPages": {
+      "title": "动态网页",
+      "description": "完美支持 Ajax、React、Vue 等动态加载的现代网页"
+    },
+    "scheduledTasks": {
+      "title": "定时任务",
+      "description": "设置定时采集任务，自动监控网页变化，及时获取最新数据"
+    },
+    "cloudSync": {
+      "title": "云端同步",
+      "description": "采集规则云端保存，多设备同步，随时随地使用"
+    }
+  },
+  "useCases": {
+    "title": "适用场景",
+    "subtitle": "无论你是什么行业，都能找到适合的应用场景",
+    "ecommerce": {
+      "title": "电商数据监控",
+      "description": "监控竞品价格、销量、评价等信息，及时调整运营策略",
+      "examples": ["商品价格监控", "库存追踪", "评论分析", "销量统计"]
+    },
+    "market": {
+      "title": "市场调研分析",
+      "description": "快速收集行业数据，分析市场趋势，为决策提供数据支持",
+      "examples": ["行业报告采集", "竞品分析", "用户评价收集", "趋势分析"]
+    },
+    "content": {
+      "title": "内容聚合",
+      "description": "从多个网站采集新闻、文章、资讯，打造个性化内容平台",
+      "examples": ["新闻聚合", "文章采集", "图片下载", "RSS 生成"]
+    },
+    "research": {
+      "title": "学术研究",
+      "description": "采集论文、专利、文献等学术资料，辅助科研工作",
+      "examples": ["论文数据采集", "引用分析", "专利检索", "数据整理"]
+    },
+    "recruitment": {
+      "title": "招聘信息",
+      "description": "聚合各大招聘网站职位信息，快速找到心仪工作",
+      "examples": ["职位采集", "薪资分析", "公司信息", "行业趋势"]
+    },
+    "realestate": {
+      "title": "房产信息",
+      "description": "采集房源信息，分析房价走势，辅助购房决策",
+      "examples": ["房源采集", "价格监控", "区域分析", "历史数据"]
+    }
+  },
+  "pricing": {
+    "title": "选择适合你的方案",
+    "subtitle": "本地插件 + 云端服务，灵活满足不同需求",
+    "localPlugin": "本地浏览器插件",
+    "localPluginDesc": "在浏览器中直接运行，简单易用",
+    "free": {
+      "name": "免费版",
+      "price": "¥0",
+      "period": "永久免费",
+      "features": ["基础数据采集", "每日 100 条数据", "3 个采集任务", "社区支持", "基础导出格式"],
+      "cta": "开始使用"
+    },
+    "pro": {
+      "name": "专业版",
+      "price": "¥99",
+      "period": "每月",
+      "features": ["无限数据采集", "无限采集任务", "云端存储", "定时任务", "优先技术支持", "高级导出选项", "API 接口"],
+      "cta": "立即购买",
+      "popular": "最受欢迎"
+    },
+    "enterprise": {
+      "name": "企业版",
+      "price": "定制",
+      "period": "联系我们",
+      "features": ["专业版所有功能", "私有化部署", "团队协作", "专属客户经理", "定制开发", "SLA 保障"],
+      "cta": "联系销售"
+    }
+  },
+  "cta": {
+    "title": "准备好开始了吗？",
+    "description": "加入数万用户，让数据采集变得简单高效",
+    "button": "免费下载 Octopus Crawler"
+  },
+  "footer": {
+    "description": "让网页数据采集变得简单高效",
+    "product": "产品",
+    "resources": "资源",
+    "contact": "联系我们",
+    "copyright": "© 2024 Octopus Crawler. All rights reserved."
+  }
+}
