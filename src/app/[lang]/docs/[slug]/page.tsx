@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Locale } from '@/i18n/config';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
+import DocsSidebar from '@/components/DocsSidebar';
 
 // Get all available docs
 function getAvailableDocs() {
@@ -75,7 +76,7 @@ export default function DocPage({ params }: { params: { lang: Locale; slug: stri
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex flex-col">
       {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -99,34 +100,23 @@ export default function DocPage({ params }: { params: { lang: Locale; slug: stri
         </nav>
       </header>
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-6">
-          <Link href={`/${params.lang}/learn`} className="text-purple-600 hover:underline flex items-center">
-            <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            {isZh ? '返回学习中心' : 'Back to Learning Center'}
-          </Link>
-        </div>
+      {/* Main Content with Sidebar */}
+      <div className="flex flex-1">
+        {/* Sidebar */}
+        <DocsSidebar lang={params.lang} />
 
-        <article className="prose prose-lg max-w-none bg-white rounded-2xl shadow-lg p-8 md:p-12">
-          <MarkdownRenderer content={content} />
-        </article>
-
-        {/* Navigation */}
-        <div className="mt-8 flex justify-between">
-          <Link 
-            href={`/${params.lang}/learn`}
-            className="text-purple-600 hover:underline"
-          >
-            ← {isZh ? '所有文档' : 'All Docs'}
-          </Link>
-        </div>
+        {/* Content */}
+        <main className="flex-1 overflow-y-auto">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <article className="prose prose-lg max-w-none bg-white rounded-2xl shadow-lg p-8 md:p-12">
+              <MarkdownRenderer content={content} />
+            </article>
+          </div>
+        </main>
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-12 mt-16">
+      <footer className="bg-gray-900 text-gray-400 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm">&copy; 2024 Octopus Crawler. All rights reserved.</p>
         </div>
