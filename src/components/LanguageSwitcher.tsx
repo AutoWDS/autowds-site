@@ -30,7 +30,7 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: Loc
             key={locale}
             onClick={() => switchLanguage(locale)}
             className={`block w-full text-left px-4 py-2 hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg ${
-              locale === currentLocale ? 'text-purple-600 font-semibold' : 'text-gray-700'
+              locale === currentLocale ? 'text-primary-600 font-semibold' : 'text-gray-700'
             }`}
           >
             {localeNames[locale]}

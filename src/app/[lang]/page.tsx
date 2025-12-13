@@ -19,10 +19,10 @@ export default function Home({ params }: { params: { lang: Locale } }) {
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-blue-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">🐙</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">
               Octopus Crawler
             </span>
           </div>
@@ -33,7 +33,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
             <Link href={`/${params.lang}/learn`} className="text-gray-600 hover:text-gray-900 transition">{t('nav.tutorial')}</Link>
             <a href="https://autowds.dtiku.cn/cloud/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition">{t('nav.cloudService')}</a>
             <LanguageSwitcher currentLocale={params.lang} />
-            <button className="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition">
+            <button className="bg-gradient-to-r from-primary-600 to-blue-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition">
               {t('common.installNow')}
             </button>
           </div>
@@ -45,7 +45,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             {t('hero.title')}
-            <span className="block bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">
               {t('hero.titleHighlight')}
             </span>
           </h1>
@@ -53,7 +53,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
             {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
+            <button className="bg-gradient-to-r from-primary-600 to-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
               {t('hero.downloadFree')}
             </button>
             <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition">
@@ -67,7 +67,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
 
         {/* Hero Image/Demo */}
         <div className="mt-16 relative">
-          <div className="bg-gradient-to-r from-purple-100 to-blue-100 rounded-2xl p-8 shadow-2xl">
+          <div className="bg-gradient-to-r from-primary-100 to-blue-100 rounded-2xl p-8 shadow-2xl">
             <div className="bg-white rounded-lg shadow-inner p-6 min-h-[400px] flex items-center justify-center">
               <div className="text-center text-gray-400">
                 <div className="text-6xl mb-4">🐙</div>
@@ -130,7 +130,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
                 <p className="text-gray-600 mb-4">{t(`useCases.${useCase.key}.description`)}</p>
                 <div className="flex flex-wrap gap-2">
                   {(t(`useCases.${useCase.key}.examples`) as any as string[]).map((example: string, i: number) => (
-                    <span key={i} className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm">
+                    <span key={i} className="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">
                       {example}
                     </span>
                   ))}
@@ -156,9 +156,9 @@ export default function Home({ params }: { params: { lang: Locale } }) {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {['free', 'pro', 'enterprise'].map((plan, index) => (
-              <div key={index} className={`bg-white rounded-2xl shadow-lg p-8 ${plan === 'pro' ? 'ring-2 ring-purple-600 transform scale-105' : ''}`}>
+              <div key={index} className={`bg-white rounded-2xl shadow-lg p-8 ${plan === 'pro' ? 'ring-2 ring-primary-600 transform scale-105' : ''}`}>
                 {plan === 'pro' && (
-                  <div className="bg-gradient-to-r from-purple-600 to-blue-500 text-white text-sm font-semibold px-4 py-1 rounded-full inline-block mb-4">
+                  <div className="bg-gradient-to-r from-primary-600 to-blue-500 text-white text-sm font-semibold px-4 py-1 rounded-full inline-block mb-4">
                     {t('pricing.pro.popular')}
                   </div>
                 )}
@@ -179,7 +179,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
                 </ul>
                 <button className={`w-full py-3 rounded-lg font-semibold transition ${
                   plan === 'pro'
-                    ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white hover:shadow-lg' 
+                    ? 'bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg' 
                     : 'border-2 border-gray-300 text-gray-700 hover:border-gray-400'
                 }`}>
                   {t(`pricing.${plan}.cta`)}
@@ -191,15 +191,15 @@ export default function Home({ params }: { params: { lang: Locale } }) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-500">
+      <section className="py-20 bg-gradient-to-r from-primary-600 to-blue-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             {t('cta.title')}
           </h2>
-          <p className="text-xl text-purple-100 mb-8">
+          <p className="text-xl text-primary-100 mb-8">
             {t('cta.description')}
           </p>
-          <button className="bg-white text-purple-600 px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-2xl transition transform hover:-translate-y-1">
+          <button className="bg-white text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-2xl transition transform hover:-translate-y-1">
             {t('cta.button')}
           </button>
         </div>
@@ -211,7 +211,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-blue-500 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold">🐙</span>
                 </div>
                 <span className="text-white font-bold">Octopus Crawler</span>

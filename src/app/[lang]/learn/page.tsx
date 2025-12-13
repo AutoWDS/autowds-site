@@ -12,10 +12,10 @@ export default function Learn({ params }: { params: { lang: Locale } }) {
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link href={`/${params.lang}`} className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-blue-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">🐙</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">
               Octopus Crawler
             </span>
           </Link>
@@ -29,7 +29,7 @@ export default function Learn({ params }: { params: { lang: Locale } }) {
             <Link href={`/${params.lang}#pricing`} className="text-gray-600 hover:text-gray-900 transition">
               {isZh ? '价格' : 'Pricing'}
             </Link>
-            <Link href={`/${params.lang}/learn`} className="text-purple-600 font-semibold">
+            <Link href={`/${params.lang}/learn`} className="text-primary-600 font-semibold">
               {isZh ? '教程' : 'Tutorial'}
             </Link>
             <a href="https://autowds.dtiku.cn/cloud/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition">
@@ -68,7 +68,7 @@ export default function Learn({ params }: { params: { lang: Locale } }) {
               <div className="grid md:grid-cols-2 gap-6">
                 <Link 
                   href={`/${params.lang}/docs/installation`}
-                  className="block p-6 border-2 border-gray-200 rounded-xl hover:border-purple-500 hover:shadow-lg transition"
+                  className="block p-6 border-2 border-gray-200 rounded-xl hover:border-primary-500 hover:shadow-lg transition"
                 >
                   <div className="text-3xl mb-3">📦</div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -81,7 +81,7 @@ export default function Learn({ params }: { params: { lang: Locale } }) {
                 
                 <Link 
                   href={`/${params.lang}/docs/getting-started`}
-                  className="block p-6 border-2 border-gray-200 rounded-xl hover:border-purple-500 hover:shadow-lg transition"
+                  className="block p-6 border-2 border-gray-200 rounded-xl hover:border-primary-500 hover:shadow-lg transition"
                 >
                   <div className="text-3xl mb-3">🚀</div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">

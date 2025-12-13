@@ -19,12 +19,12 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
         ul: ({node, ...props}) => <ul className="list-disc list-inside mb-4 space-y-2" {...props} />,
         ol: ({node, ...props}) => <ol className="list-decimal list-inside mb-4 space-y-2" {...props} />,
         li: ({node, ...props}) => <li className="text-gray-700" {...props} />,
-        a: ({node, ...props}) => <a className="text-purple-600 hover:underline" {...props} />,
+        a: ({node, ...props}) => <a className="text-primary-600 hover:underline" {...props} />,
         code: ({node, inline, ...props}: any) => 
           inline 
-            ? <code className="bg-gray-100 text-purple-600 px-2 py-1 rounded text-sm" {...props} />
+            ? <code className="bg-gray-100 text-primary-600 px-2 py-1 rounded text-sm" {...props} />
             : <code className="block bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4" {...props} />,
-        blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-purple-500 pl-4 italic text-gray-600 my-4" {...props} />,
+        blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-primary-500 pl-4 italic text-gray-600 my-4" {...props} />,
       }}
     >
       {content}

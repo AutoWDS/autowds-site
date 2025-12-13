@@ -44,7 +44,7 @@ export default function DocsSidebar({ lang }: DocsSidebarProps) {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`block px-3 py-2 rounded-lg text-sm transition ${
                         isActive
-                          ? 'bg-purple-50 text-purple-700 font-medium'
+                          ? 'bg-primary-50 text-primary-700 font-medium'
                           : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
                       }`}
                     >
@@ -78,7 +78,7 @@ export default function DocsSidebar({ lang }: DocsSidebarProps) {
       {/* 移动端菜单按钮 */}
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="lg:hidden fixed bottom-6 right-6 z-50 bg-purple-600 text-white p-4 rounded-full shadow-lg hover:bg-purple-700 transition"
+        className="lg:hidden fixed bottom-6 right-6 z-50 bg-primary-600 text-white p-4 rounded-full shadow-lg hover:bg-primary-700 transition"
         aria-label="Toggle menu"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
