@@ -31,7 +31,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
             <a href="#use-cases" className="text-gray-600 hover:text-gray-900 transition">{t('nav.useCases')}</a>
             <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition">{t('nav.pricing')}</a>
             <Link href={`/${params.lang}/learn`} className="text-gray-600 hover:text-gray-900 transition">{t('nav.tutorial')}</Link>
-            <a href="https://autowds.dtiku.cn/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition">{t('nav.cloudService')}</a>
+            <a href="https://autowds.dtiku.cn/cloud/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition">{t('nav.cloudService')}</a>
             <LanguageSwitcher currentLocale={params.lang} />
             <button className="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition">
               {t('common.installNow')}
