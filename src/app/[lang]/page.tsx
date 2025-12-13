@@ -3,6 +3,13 @@ import { Locale } from '@/i18n/config';
 import { useTranslations } from '@/i18n/utils';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
+export function generateStaticParams() {
+  return [
+    { lang: 'zh' },
+    { lang: 'en' }
+  ];
+}
+
 export default function Home({ params }: { params: { lang: Locale } }) {
   const t = useTranslations(params.lang);
 

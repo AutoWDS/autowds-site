@@ -8,7 +8,7 @@ export default function RootPage() {
           (function() {
             const browserLang = navigator.language.toLowerCase();
             const locale = browserLang.startsWith('zh') ? 'zh' : 'en';
-            window.location.replace('/' + locale);
+            window.location.replace('/' + locale + '/');
           })();
         `}
       </Script>
