@@ -11,7 +11,10 @@
     "contactSales": "联系销售",
     "freeForever": "永久免费",
     "perMonth": "每月",
-    "contactUs": "联系我们"
+    "contactUs": "联系我们",
+    "wechatAssistant": "咨询客服",
+    "wechatAssistantLoading": "正在唤起客服...",
+    "wechatAssistantError": "客服加载失败，请稍后再试"
   },
   "nav": {
     "home": "首页",

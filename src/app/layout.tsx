@@ -1,5 +1,6 @@
 import './globals.css';
 import Script from 'next/script';
+import WeChatAssistantButton from '@/components/WeChatAssistantButton';
 
 export default function RootLayout({
   children,
@@ -10,6 +11,7 @@ export default function RootLayout({
     <html suppressHydrationWarning>
       <body suppressHydrationWarning>
         {children}
+        <WeChatAssistantButton />
         {/* Baidu Analytics */}
         <Script id="baidu-analytics" strategy="afterInteractive">
           {`

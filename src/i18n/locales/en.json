@@ -11,7 +11,10 @@
     "contactSales": "Contact Sales",
     "freeForever": "Free Forever",
     "perMonth": "per month",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "wechatAssistant": "Support Assistant",
+    "wechatAssistantLoading": "Opening support...",
+    "wechatAssistantError": "Failed to open support, please try again"
   },
   "nav": {
     "home": "Home",
