@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { Locale, defaultLocale, locales } from '@/i18n/config';
 import { getNestedTranslation, getTranslations } from '@/i18n/utils';
@@ -153,13 +153,6 @@ export default function WeChatAssistantButton() {
       .catch(() => setError(t('common.wechatAssistantError')))
       .finally(() => setLoading(false));
   }, [loading, t]);
-
-  // 页面卸载时清理引用
-  useEffect(() => {
-    return () => {
-      floatWindowContainer = null;
-    };
-  }, []);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-2">

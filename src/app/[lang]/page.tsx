@@ -26,14 +26,41 @@ export default function Home({ params }: { params: { lang: Locale } }) {
               Octopus Crawler
             </span>
           </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-gray-900 transition">{t('nav.features')}</a>
-            <a href="#use-cases" className="text-gray-600 hover:text-gray-900 transition">{t('nav.useCases')}</a>
-            <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition">{t('nav.pricing')}</a>
-            <Link href={`/${params.lang}/learn`} className="text-gray-600 hover:text-gray-900 transition">{t('nav.tutorial')}</Link>
-            <a href="https://autowds.dtiku.cn/cloud/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition">{t('nav.cloudService')}</a>
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <a
+              href="#features"
+              className="text-gray-600 hover:text-gray-900 transition whitespace-nowrap text-sm md:text-base"
+            >
+              {t('nav.features')}
+            </a>
+            <a
+              href="#use-cases"
+              className="text-gray-600 hover:text-gray-900 transition whitespace-nowrap text-sm md:text-base"
+            >
+              {t('nav.useCases')}
+            </a>
+            <a
+              href="#pricing"
+              className="text-gray-600 hover:text-gray-900 transition whitespace-nowrap text-sm md:text-base"
+            >
+              {t('nav.pricing')}
+            </a>
+            <Link
+              href={`/${params.lang}/learn`}
+              className="text-gray-600 hover:text-gray-900 transition whitespace-nowrap text-sm md:text-base"
+            >
+              {t('nav.tutorial')}
+            </Link>
+            <a
+              href="https://autowds.dtiku.cn/cloud/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-gray-900 transition whitespace-nowrap text-sm md:text-base"
+            >
+              {t('nav.cloudService')}
+            </a>
             <LanguageSwitcher currentLocale={params.lang} />
-            <button className="bg-gradient-to-r from-primary-600 to-blue-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition">
+            <button className="bg-gradient-to-r from-primary-600 to-blue-500 text-white px-5 py-2 rounded-lg hover:shadow-lg transition text-sm md:text-base whitespace-nowrap">
               {t('common.installNow')}
             </button>
           </div>
