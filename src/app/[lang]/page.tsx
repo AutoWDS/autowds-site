@@ -208,30 +208,18 @@ export default function Home({ params }: { params: { lang: Locale } }) {
                 </ul>
                 {plan === 'free' ? (
                   <ScrollToCTAButton
-                    className={`w-full py-3 rounded-lg font-semibold transition ${
-                      plan === 'pro'
-                        ? 'bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg' 
-                        : 'border-2 border-gray-300 text-gray-700 hover:border-gray-400'
-                    }`}
+                    className="w-full py-3 rounded-lg font-semibold transition border-2 border-gray-300 text-gray-700 hover:border-gray-400"
                   >
                     {t(`pricing.${plan}.cta`)}
                   </ScrollToCTAButton>
                 ) : plan === 'enterprise' ? (
                   <ContactSalesButton
-                    className={`w-full py-3 rounded-lg font-semibold transition ${
-                      plan === 'pro'
-                        ? 'bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg' 
-                        : 'border-2 border-gray-300 text-gray-700 hover:border-gray-400'
-                    }`}
+                    className="w-full py-3 rounded-lg font-semibold transition border-2 border-gray-300 text-gray-700 hover:border-gray-400"
                   >
                     {t(`pricing.${plan}.cta`)}
                   </ContactSalesButton>
                 ) : (
-                  <button className={`w-full py-3 rounded-lg font-semibold transition ${
-                    plan === 'pro'
-                      ? 'bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg' 
-                      : 'border-2 border-gray-300 text-gray-700 hover:border-gray-400'
-                  }`}>
+                  <button className="w-full py-3 rounded-lg font-semibold transition bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg">
                     {t(`pricing.${plan}.cta`)}
                   </button>
                 )}
