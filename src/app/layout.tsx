@@ -12,6 +12,8 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         {children}
         <WeChatAssistantButton />
+        {/* IconFont */}
+        <Script src="//at.alicdn.com/t/c/font_5093665_p3o6zvy854.js" strategy="afterInteractive" />
         {/* Baidu Analytics */}
         <Script id="baidu-analytics" strategy="afterInteractive">
           {`

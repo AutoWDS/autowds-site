@@ -31,7 +31,12 @@
     "downloadFree": "免费下载插件",
     "watchDemo": "观看演示视频",
     "browserSupport": "支持 Chrome、Edge、Firefox 等主流浏览器",
-    "completelyFree": "完全免费使用"
+    "completelyFree": "完全免费使用",
+    "downloadFor": {
+      "chrome": "Chrome 浏览器",
+      "edge": "Edge 浏览器",
+      "firefox": "Firefox 浏览器"
+    }
   },
   "features": {
     "title": "强大的功能特性",

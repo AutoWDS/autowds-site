@@ -31,7 +31,12 @@
     "downloadFree": "Download Free",
     "watchDemo": "Watch Demo",
     "browserSupport": "Supports Chrome, Edge, Firefox and more",
-    "completelyFree": "Completely Free"
+    "completelyFree": "Completely Free",
+    "downloadFor": {
+      "chrome": "Chrome Browser",
+      "edge": "Edge Browser",
+      "firefox": "Firefox Browser"
+    }
   },
   "features": {
     "title": "Powerful Features",

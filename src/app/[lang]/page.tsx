@@ -2,6 +2,10 @@ import Link from 'next/link';
 import { Locale } from '@/i18n/config';
 import { useTranslations } from '@/i18n/utils';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import DownloadButton from '@/components/DownloadButton';
+import ScrollToCTAButton from '@/components/ScrollToCTAButton';
+import ContactSalesButton from '@/components/ContactSalesButton';
+import ContactSalesLink from '@/components/ContactSalesLink';
 
 export function generateStaticParams() {
   return [
@@ -60,9 +64,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
               {t('nav.cloudService')}
             </a>
             <LanguageSwitcher currentLocale={params.lang} />
-            <button className="bg-gradient-to-r from-primary-600 to-blue-500 text-white px-5 py-2 rounded-lg hover:shadow-lg transition text-sm md:text-base whitespace-nowrap">
-              {t('common.installNow')}
-            </button>
+            <DownloadButton lang={params.lang} variant="header" />
           </div>
         </nav>
       </header>
@@ -79,11 +81,11 @@ export default function Home({ params }: { params: { lang: Locale } }) {
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             {t('hero.description')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-gradient-to-r from-primary-600 to-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-xl transition transform hover:-translate-y-0.5">
-              {t('hero.downloadFree')}
-            </button>
-            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
+            <div className="w-full sm:w-auto">
+              <DownloadButton lang={params.lang} />
+            </div>
+            <button className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition">
               {t('hero.watchDemo')}
             </button>
           </div>
@@ -204,13 +206,35 @@ export default function Home({ params }: { params: { lang: Locale } }) {
                     </li>
                   ))}
                 </ul>
-                <button className={`w-full py-3 rounded-lg font-semibold transition ${
-                  plan === 'pro'
-                    ? 'bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg' 
-                    : 'border-2 border-gray-300 text-gray-700 hover:border-gray-400'
-                }`}>
-                  {t(`pricing.${plan}.cta`)}
-                </button>
+                {plan === 'free' ? (
+                  <ScrollToCTAButton
+                    className={`w-full py-3 rounded-lg font-semibold transition ${
+                      plan === 'pro'
+                        ? 'bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg' 
+                        : 'border-2 border-gray-300 text-gray-700 hover:border-gray-400'
+                    }`}
+                  >
+                    {t(`pricing.${plan}.cta`)}
+                  </ScrollToCTAButton>
+                ) : plan === 'enterprise' ? (
+                  <ContactSalesButton
+                    className={`w-full py-3 rounded-lg font-semibold transition ${
+                      plan === 'pro'
+                        ? 'bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg' 
+                        : 'border-2 border-gray-300 text-gray-700 hover:border-gray-400'
+                    }`}
+                  >
+                    {t(`pricing.${plan}.cta`)}
+                  </ContactSalesButton>
+                ) : (
+                  <button className={`w-full py-3 rounded-lg font-semibold transition ${
+                    plan === 'pro'
+                      ? 'bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg' 
+                      : 'border-2 border-gray-300 text-gray-700 hover:border-gray-400'
+                  }`}>
+                    {t(`pricing.${plan}.cta`)}
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -218,7 +242,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-blue-500">
+      <section id="cta" className="py-20 bg-gradient-to-r from-primary-600 to-blue-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             {t('cta.title')}
@@ -226,9 +250,9 @@ export default function Home({ params }: { params: { lang: Locale } }) {
           <p className="text-xl text-primary-100 mb-8">
             {t('cta.description')}
           </p>
-          <button className="bg-white text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-2xl transition transform hover:-translate-y-1">
-            {t('cta.button')}
-          </button>
+          <div className="flex justify-center">
+            <DownloadButton lang={params.lang} variant="cta" />
+          </div>
         </div>
       </section>
 
@@ -249,6 +273,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
               <h4 className="text-white font-semibold mb-4">{t('footer.product')}</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#features" className="hover:text-white transition">{t('nav.features')}</a></li>
+                <li><a href="#use-cases" className="hover:text-white transition">{t('nav.useCases')}</a></li>
                 <li><a href="#pricing" className="hover:text-white transition">{t('nav.pricing')}</a></li>
               </ul>
             </div>
@@ -260,6 +285,27 @@ export default function Home({ params }: { params: { lang: Locale } }) {
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">{t('footer.contact')}</h4>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <a 
+                    href="mailto:hff1996723@163.com" 
+                    className="text-gray-400 hover:text-white transition flex items-center gap-2"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>hff1996723@163.com</span>
+                  </a>
+                </li>
+                <li>
+                  <ContactSalesLink className="text-gray-400 hover:text-white transition flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                    </svg>
+                    <span>{t('common.wechatAssistant')}</span>
+                  </ContactSalesLink>
+                </li>
+              </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
