@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Locale } from '@/i18n/config';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import DocsSidebar from '@/components/DocsSidebar';
@@ -12,9 +13,7 @@ export default function Learn({ params }: { params: { lang: Locale } }) {
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link href={`/${params.lang}`} className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">🐙</span>
-            </div>
+            <Image src="/favicon.ico" alt="Octopus Crawler" width={32} height={32} />
             <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">
               Octopus Crawler
             </span>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Locale } from '@/i18n/config';
 import { useTranslations } from '@/i18n/utils';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
@@ -23,9 +24,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">🐙</span>
-            </div>
+            <Image src="/favicon.ico" alt="Octopus Crawler" width={32} height={32} />
             <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">
               Octopus Crawler
             </span>
@@ -99,7 +98,9 @@ export default function Home({ params }: { params: { lang: Locale } }) {
           <div className="bg-gradient-to-r from-primary-100 to-blue-100 rounded-2xl p-8 shadow-2xl">
             <div className="bg-white rounded-lg shadow-inner p-6 min-h-[400px] flex items-center justify-center">
               <div className="text-center text-gray-400">
-                <div className="text-6xl mb-4">🐙</div>
+                <div className="mb-4 flex justify-center">
+                  <Image src="/favicon.ico" alt="Octopus Crawler" width={64} height={64} />
+                </div>
                 <p className="text-lg">{params.lang === 'zh' ? '插件界面演示区域' : 'Extension Interface Demo'}</p>
               </div>
             </div>
@@ -250,9 +251,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-blue-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">🐙</span>
-                </div>
+                <Image src="/favicon.ico" alt="Octopus Crawler" width={32} height={32} />
                 <span className="text-white font-bold">Octopus Crawler</span>
               </div>
               <p className="text-sm">{t('footer.description')}</p>
