@@ -121,7 +121,7 @@
     "billingToggle": {
       "monthly": "Monthly",
       "yearly": "Yearly",
-      "yearlyDiscount": "Save 20% with yearly billing"
+      "yearlyDiscount": "20% off"
     },
     "free": {
       "name": "Free",
