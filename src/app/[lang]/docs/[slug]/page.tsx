@@ -6,6 +6,8 @@ import { Locale } from '@/i18n/config';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 import DocsSidebar from '@/components/DocsSidebar';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 // Get all available docs
 function getAvailableDocs() {
@@ -78,26 +80,7 @@ export default function DocPage({ params }: { params: { lang: Locale; slug: stri
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex flex-col">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link href={`/${params.lang}`} className="flex items-center space-x-2">
-            <Image src="/favicon.ico" alt="Octopus Crawler" width={32} height={32} />
-            <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-blue-500 bg-clip-text text-transparent">
-              Octopus Crawler
-            </span>
-          </Link>
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href={`/${params.lang}#features`} className="text-gray-600 hover:text-gray-900 transition">
-              {isZh ? '功能特性' : 'Features'}
-            </Link>
-            <Link href={`/${params.lang}/learn`} className="text-gray-600 hover:text-gray-900 transition">
-              {isZh ? '教程' : 'Tutorial'}
-            </Link>
-            <LanguageSwitcher currentLocale={params.lang} />
-          </div>
-        </nav>
-      </header>
+      <Header lang={params.lang} currentPage="docs" />
 
       {/* Main Content with Sidebar */}
       <div className="flex flex-1">
@@ -114,12 +97,7 @@ export default function DocPage({ params }: { params: { lang: Locale; slug: stri
         </main>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm">&copy; 2024 Octopus Crawler. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer lang={params.lang} variant="simple" />
     </div>
   );
 }

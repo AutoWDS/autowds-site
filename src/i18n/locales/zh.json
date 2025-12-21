@@ -22,6 +22,7 @@
     "useCases": "使用场景",
     "pricing": "价格",
     "tutorial": "教程",
+    "changelog": "更新日志",
     "cloudService": "云服务"
   },
   "hero": {
@@ -151,5 +152,9 @@
     "resources": "资源",
     "contact": "联系我们",
     "copyright": "© 2024 Octopus Crawler. All rights reserved."
+  },
+  "changelog": {
+    "title": "更新日志",
+    "subtitle": "了解 Octopus Crawler 的最新功能和改进"
   }
 }

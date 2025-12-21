@@ -56,19 +56,78 @@ npm run build
 npm start
 ```
 
+### 代码检查
+
+```bash
+npm run lint
+```
+
+## Changelog 管理
+
+项目使用标准的 [Keep a Changelog](https://keepachangelog.com/) 格式管理版本更新记录。
+
+### 可用命令
+
+```bash
+# 验证 changelog 格式
+npm run changelog:validate
+
+# 测试解析器功能
+npm run changelog:test
+
+# 测试集成效果
+npm run changelog:test-integration
+
+# 运行所有 changelog 测试
+npm run changelog:test-all
+```
+
+### Changelog 文件
+
+- `CHANGELOG.md` - 英文版更新日志
+- `CHANGELOG.zh.md` - 中文版更新日志
+
+### 添加新版本
+
+1. 编辑对应的 changelog 文件
+2. 遵循 Keep a Changelog 格式
+3. 运行验证命令：`npm run changelog:validate`
+4. 测试解析效果：`npm run changelog:test-all`
+
+详细说明请参考 [CHANGELOG_README.md](./CHANGELOG_README.md) 和 [NPM_SCRIPTS.md](./NPM_SCRIPTS.md)。
+
 ## 项目结构
 
 ```
 octopus-site/
 ├── src/
-│   └── app/
-│       ├── layout.tsx          # 全局布局
-│       ├── page.tsx            # 主页（包含云服务介绍）
-│       ├── globals.css         # 全局样式
-│       └── learn/
-│           └── page.tsx        # 教程页面
-├── public/                     # 静态资源
-├── docs/                       # 文档
+│   ├── app/
+│   │   ├── [lang]/
+│   │   │   ├── page.tsx            # 多语言主页
+│   │   │   ├── learn/
+│   │   │   │   └── page.tsx        # 教程页面
+│   │   │   ├── changelog/
+│   │   │   │   └── page.tsx        # 更新日志页面
+│   │   │   └── docs/
+│   │   │       └── [slug]/
+│   │   │           └── page.tsx    # 文档页面
+│   │   ├── layout.tsx              # 全局布局
+│   │   └── globals.css             # 全局样式
+│   ├── components/
+│   │   ├── Header.tsx              # 页头组件
+│   │   ├── Footer.tsx              # 页脚组件
+│   │   └── ...                     # 其他组件
+│   ├── utils/
+│   │   └── changelog-parser.ts     # Changelog 解析器
+│   └── i18n/                       # 国际化配置
+├── scripts/                        # 工具脚本
+│   ├── validate-changelog.js       # Changelog 格式验证
+│   ├── test-changelog-parser.js    # 解析器测试
+│   └── test-changelog-integration.js # 集成测试
+├── public/                         # 静态资源
+├── docs/                           # 文档
+├── CHANGELOG.md                    # 英文更新日志
+├── CHANGELOG.zh.md                 # 中文更新日志
 └── README.md
 ```
 
@@ -135,10 +194,38 @@ npm run build
 - [ ] 集成真实的下载链接
 - [ ] 添加用户评价/案例展示
 - [ ] 集成博客系统
-- [ ] 添加多语言支持
+- [x] 添加多语言支持（中文/英文）
+- [x] 添加更新日志页面
+- [x] 组件化重构（Header/Footer）
 - [ ] 集成分析工具（Google Analytics）
 - [ ] 添加在线客服系统
 - [ ] SEO 优化
+- [ ] 移动端菜单优化
+- [ ] 添加搜索功能
+
+## 开发工具
+
+### NPM 脚本
+
+| 命令 | 功能 |
+|------|------|
+| `npm run dev` | 启动开发服务器 |
+| `npm run build` | 构建生产版本 |
+| `npm run start` | 启动生产服务器 |
+| `npm run lint` | 代码检查和格式化 |
+| `npm run changelog:validate` | 验证 changelog 格式 |
+| `npm run changelog:test` | 测试解析器功能 |
+| `npm run changelog:test-integration` | 测试集成效果 |
+| `npm run changelog:test-all` | 运行所有 changelog 测试 |
+
+详细说明请参考 [NPM_SCRIPTS.md](./NPM_SCRIPTS.md)。
+
+### 相关文档
+
+- [CHANGELOG_README.md](./CHANGELOG_README.md) - Changelog 使用说明
+- [COMPONENT_REFACTOR.md](./COMPONENT_REFACTOR.md) - 组件重构说明
+- [CHANGELOG_FIX.md](./CHANGELOG_FIX.md) - 中文支持修复说明
+- [NPM_SCRIPTS.md](./NPM_SCRIPTS.md) - NPM 脚本命令说明
 
 ## License
 

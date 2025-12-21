@@ -22,6 +22,7 @@
     "useCases": "Use Cases",
     "pricing": "Pricing",
     "tutorial": "Tutorial",
+    "changelog": "Changelog",
     "cloudService": "Cloud Service"
   },
   "hero": {
@@ -151,5 +152,9 @@
     "resources": "Resources",
     "contact": "Contact",
     "copyright": "© 2024 Octopus Crawler. All rights reserved."
+  },
+  "changelog": {
+    "title": "Changelog",
+    "subtitle": "Stay updated with the latest features and improvements of Octopus Crawler"
   }
 }

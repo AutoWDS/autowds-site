@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "changelog:validate": "node scripts/validate-changelog.js",
+    "changelog:test": "node scripts/test-changelog-parser.js",
+    "changelog:test-integration": "node scripts/test-changelog-integration.js",
+    "changelog:test-all": "npm run changelog:validate && npm run changelog:test && npm run changelog:test-integration"
   },
   "dependencies": {
     "@types/node": "20.3.2",
