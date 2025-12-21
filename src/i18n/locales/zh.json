@@ -118,6 +118,11 @@
     "subtitle": "本地插件 + 云端服务，灵活满足不同需求",
     "localPlugin": "本地浏览器插件",
     "localPluginDesc": "在浏览器中直接运行，简单易用",
+    "billingToggle": {
+      "monthly": "按月付费",
+      "yearly": "按年付费",
+      "yearlyDiscount": "年付享8折优惠"
+    },
     "free": {
       "name": "免费版",
       "price": "¥0",
@@ -125,10 +130,21 @@
       "features": ["基础数据采集", "每日 100 条数据", "3 个采集任务", "社区支持", "基础导出格式"],
       "cta": "开始使用"
     },
-    "pro": {
+    "personal": {
+      "name": "个人版",
+      "price": "¥59",
+      "yearlyPrice": "¥47",
+      "period": "每月",
+      "yearlyPeriod": "每月（年付）",
+      "features": ["无限数据采集", "每日 1000 条数据", "10 个采集任务", "邮件支持", "标准导出格式"],
+      "cta": "立即购买"
+    },
+    "professional": {
       "name": "专业版",
       "price": "¥99",
+      "yearlyPrice": "¥79",
       "period": "每月",
+      "yearlyPeriod": "每月（年付）",
       "features": ["无限数据采集", "无限采集任务", "云端存储", "定时任务", "优先技术支持", "高级导出选项", "API 接口"],
       "cta": "立即购买",
       "popular": "最受欢迎"

@@ -118,6 +118,11 @@
     "subtitle": "Local extension + Cloud service, flexible to meet different needs",
     "localPlugin": "Local Browser Extension",
     "localPluginDesc": "Run directly in your browser, simple and easy to use",
+    "billingToggle": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "yearlyDiscount": "Save 20% with yearly billing"
+    },
     "free": {
       "name": "Free",
       "price": "$0",
@@ -125,10 +130,21 @@
       "features": ["Basic data collection", "100 records/day", "3 scraping tasks", "Community support", "Basic export formats"],
       "cta": "Get Started"
     },
-    "pro": {
+    "personal": {
+      "name": "Personal",
+      "price": "$9",
+      "yearlyPrice": "$7",
+      "period": "per month",
+      "yearlyPeriod": "per month (billed yearly)",
+      "features": ["Unlimited data collection", "1,000 records/day", "10 scraping tasks", "Email support", "Standard export formats"],
+      "cta": "Buy Now"
+    },
+    "professional": {
       "name": "Professional",
       "price": "$15",
+      "yearlyPrice": "$12",
       "period": "per month",
+      "yearlyPeriod": "per month (billed yearly)",
       "features": ["Unlimited data collection", "Unlimited tasks", "Cloud storage", "Scheduled tasks", "Priority support", "Advanced export options", "API access"],
       "cta": "Buy Now",
       "popular": "Most Popular"

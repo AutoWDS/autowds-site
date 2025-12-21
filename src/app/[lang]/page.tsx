@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import { Locale } from '@/i18n/config';
 import { useTranslations } from '@/i18n/utils';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
@@ -19,6 +22,7 @@ export function generateStaticParams() {
 
 export default function Home({ params }: { params: { lang: Locale } }) {
   const t = useTranslations(params.lang);
+  const [isYearly, setIsYearly] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -132,51 +136,90 @@ export default function Home({ params }: { params: { lang: Locale } }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('pricing.title')}</h2>
-            <p className="text-xl text-gray-600">{t('pricing.subtitle')}</p>
-          </div>
+            <p className="text-xl text-gray-600 mb-8">{t('pricing.subtitle')}</p>
 
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">{t('pricing.localPlugin')}</h3>
-            <p className="text-gray-600 text-center mb-8">{t('pricing.localPluginDesc')}</p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {['free', 'pro', 'enterprise'].map((plan, index) => (
-              <div key={index} className={`bg-white rounded-2xl shadow-lg p-8 ${plan === 'pro' ? 'ring-2 ring-primary-600 transform scale-105' : ''}`}>
-                {plan === 'pro' && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">{t('pricing.localPlugin')}</h3>
+              <p className="text-gray-600 text-center mb-8">{t('pricing.localPluginDesc')}</p>
+            </div>
+
+            {/* Billing Toggle */}
+            <div className="flex flex-col items-center justify-center mb-8">
+              <div className="relative inline-flex bg-gray-100 rounded-full p-1">
+                <button
+                  onClick={() => setIsYearly(false)}
+                  className={`relative px-6 py-2 text-sm font-medium rounded-full transition-all duration-200 ${!isYearly
+                      ? 'bg-white text-gray-900 shadow-sm'
+                      : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                >
+                  {t('pricing.billingToggle.monthly')}
+                </button>
+                <button
+                  onClick={() => setIsYearly(true)}
+                  className={`relative px-6 py-2 text-sm font-medium rounded-full transition-all duration-200 ${isYearly
+                      ? 'bg-white text-gray-900 shadow-sm'
+                      : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                >
+                  {t('pricing.billingToggle.yearly')}
+                </button>
+              </div>
+              <div className="mt-2">
+                <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">
+                  {t('pricing.billingToggle.yearlyDiscount')}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {['free', 'personal', 'professional', 'enterprise'].map((plan, index) => (
+              <div key={index} className={`bg-white rounded-2xl shadow-lg p-6 ${plan === 'professional' ? 'ring-2 ring-primary-600 transform scale-105' : ''}`}>
+                {plan === 'professional' && (
                   <div className="bg-gradient-to-r from-primary-600 to-blue-500 text-white text-sm font-semibold px-4 py-1 rounded-full inline-block mb-4">
-                    {t('pricing.pro.popular')}
+                    {t('pricing.professional.popular')}
                   </div>
                 )}
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{t(`pricing.${plan}.name`)}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{t(`pricing.${plan}.name`)}</h3>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold text-gray-900">{t(`pricing.${plan}.price`)}</span>
-                  <span className="text-gray-600 ml-2">{t(`pricing.${plan}.period`)}</span>
+                  <span className="text-3xl font-bold text-gray-900">
+                    {isYearly && (plan === 'personal' || plan === 'professional')
+                      ? t(`pricing.${plan}.yearlyPrice`)
+                      : t(`pricing.${plan}.price`)
+                    }
+                  </span>
+                  <span className="text-gray-600 ml-2 text-sm">
+                    {isYearly && (plan === 'personal' || plan === 'professional')
+                      ? t(`pricing.${plan}.yearlyPeriod`)
+                      : t(`pricing.${plan}.period`)
+                    }
+                  </span>
                 </div>
-                <ul className="space-y-3 mb-8">
-                  {(t(`pricing.${plan}.features`) as any as string[]).map((feature: string, i: number) => (
+                <ul className="space-y-2 mb-6">
+                  {(t(`pricing.${plan}.features`) as string[]).map((feature: string, i: number) => (
                     <li key={i} className="flex items-start">
-                      <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className="text-gray-600">{feature}</span>
+                      <span className="text-gray-600 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 {plan === 'free' ? (
                   <ScrollToCTAButton
-                    className="w-full py-3 rounded-lg font-semibold transition border-2 border-gray-300 text-gray-700 hover:border-gray-400"
+                    className="w-full py-2.5 rounded-lg font-semibold transition border-2 border-gray-300 text-gray-700 hover:border-gray-400 text-sm"
                   >
                     {t(`pricing.${plan}.cta`)}
                   </ScrollToCTAButton>
                 ) : plan === 'enterprise' ? (
                   <ContactSalesButton
-                    className="w-full py-3 rounded-lg font-semibold transition border-2 border-gray-300 text-gray-700 hover:border-gray-400"
+                    className="w-full py-2.5 rounded-lg font-semibold transition border-2 border-gray-300 text-gray-700 hover:border-gray-400 text-sm"
                   >
                     {t(`pricing.${plan}.cta`)}
                   </ContactSalesButton>
                 ) : (
-                  <button className="w-full py-3 rounded-lg font-semibold transition bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg">
+                  <button className="w-full py-2.5 rounded-lg font-semibold transition bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg text-sm">
                     {t(`pricing.${plan}.cta`)}
                   </button>
                 )}
