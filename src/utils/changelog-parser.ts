@@ -135,15 +135,15 @@ export function parseChangelog(markdownContent: string): ChangelogEntry[] {
 export function getVersionBadgeColor(type: ChangelogEntry['type']): string {
   switch (type) {
     case 'major':
-      return 'bg-red-100 text-red-800 border-red-200';
+      return 'bg-red-200 text-red-800 border-red-500';
     case 'minor':
-      return 'bg-blue-100 text-blue-800 border-blue-200';
+      return 'bg-blue-200 text-blue-800 border-blue-500';
     case 'patch':
-      return 'bg-green-100 text-green-800 border-green-200';
+      return 'bg-green-200 text-green-800 border-green-500';
     case 'unreleased':
-      return 'bg-purple-100 text-purple-800 border-purple-200';
+      return 'bg-purple-200 text-purple-800 border-purple-500';
     default:
-      return 'bg-gray-100 text-gray-800 border-gray-200';
+      return 'bg-gray-200 text-gray-800 border-gray-500';
   }
 }
 

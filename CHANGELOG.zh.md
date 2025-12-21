@@ -13,7 +13,7 @@
 ### 变更
 - 采用更现代化的用户界面设计
 
-## [0.2.1] - 2024-12-01
+## [0.2.0] - 2024-12-01
 
 ### 新增
 - 全新的可视化规则编辑器，支持拖拽式操作
@@ -26,7 +26,7 @@
 ### 移除
 - 移除了旧版本的兼容模式，专注于现代浏览器支持
 
-## [0.1.2] - 2024-11-15
+## [0.1.1] - 2024-11-15
 
 ### 修复
 - 修复了 Chrome 扩展在最新版本中的兼容性问题
@@ -36,7 +36,7 @@
 ### 变更
 - 优化了内存使用，减少了长时间运行时的内存占用
 
-## [0.1.1] - 2024-10-30
+## [0.1.0] - 2024-10-30
 
 ### 新增
 - 新增定时任务系统，支持自动化数据采集
@@ -71,9 +71,9 @@
 - CSV 和 JSON 导出格式
 - 可视化元素选择工具
 
-[未发布]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.0.5...HEAD
-[0.0.5]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.0.4...v0.0.5
-[0.0.4]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.0.3...v0.0.4
-[0.0.3]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.0.2...v0.0.3
+[未发布]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.0.2...v0.1.0
 [0.0.2]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/octopus-crawler/octopus-crawler/releases/tag/v0.0.1

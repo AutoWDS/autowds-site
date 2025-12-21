@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Improved user interface with modern design elements
 
-## [0.2.1] - 2024-12-01
+## [0.2.0] - 2024-12-01
 
 ### Added
 - Brand new visual rule editor with drag-and-drop operations
@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Removed legacy compatibility mode, focusing on modern browser support
 
-## [0.1.2] - 2024-11-15
+## [0.1.1] - 2024-11-15
 
 ### Fixed
 - Fixed Chrome extension compatibility issues with the latest browser version
@@ -36,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Optimized memory usage, reducing memory consumption during long-running sessions
 
-## [0.1.1] - 2024-10-30
+## [0.1.0] - 2024-10-30
 
 ### Added
 - New scheduled task system for automated data collection
@@ -71,9 +71,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CSV and JSON export formats
 - Visual element selection tool
 
-[Unreleased]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.0.5...HEAD
-[0.2.1]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.1.2...v0.2.1
-[0.1.2]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.1.1...v0.1.2
-[0.1.1]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.0.2...v0.1.1
+[Unreleased]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.0.2...v0.1.0
 [0.0.2]: https://github.com/octopus-crawler/octopus-crawler/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/octopus-crawler/octopus-crawler/releases/tag/v0.0.1
