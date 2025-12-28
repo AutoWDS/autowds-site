@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Improved user interface with modern design elements
+- Optimize the issue where styles cannot be injected across multiple Shadow DOMs
 
 ## [0.2.0] - 2024-12-01
 
