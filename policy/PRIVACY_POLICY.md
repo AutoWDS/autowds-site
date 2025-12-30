@@ -1,4 +1,4 @@
-# Privacy Policy for Octopus Crawler (Microsoft Edge Extension)
+# Privacy Policy for Octopus Crawler
 
 Octopus Crawler is a browser extension designed to help users collect and extract structured data from web pages.
 
