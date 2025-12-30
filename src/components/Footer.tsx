@@ -46,6 +46,7 @@ export default function Footer({ lang, variant = 'full' }: FooterProps) {
             <ul className="space-y-2 text-sm">
               <li><Link href={`/${lang}/learn`} className="hover:text-white transition">{t('nav.tutorial')}</Link></li>
               <li><Link href={`/${lang}/changelog`} className="hover:text-white transition">{t('nav.changelog')}</Link></li>
+              <li><Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
             </ul>
           </div>
           <div>
