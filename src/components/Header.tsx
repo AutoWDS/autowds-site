@@ -10,7 +10,7 @@ import DownloadButton from '@/components/DownloadButton';
 
 interface HeaderProps {
   lang: Locale;
-  currentPage?: 'home' | 'learn' | 'changelog' | 'docs' | 'privacy';
+  currentPage?: 'home' | 'learn' | 'changelog' | 'docs';
 }
 
 export default function Header({ lang, currentPage = 'home' }: HeaderProps) {
