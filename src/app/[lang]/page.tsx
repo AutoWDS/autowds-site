@@ -1,15 +1,12 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Locale } from '@/i18n/config';
 import { useTranslations } from '@/i18n/utils';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 import DownloadButton from '@/components/DownloadButton';
-import ScrollToCTAButton from '@/components/ScrollToCTAButton';
+import ScrollToButton from '@/components/ScrollToButton';
 import ContactSalesButton from '@/components/ContactSalesButton';
-import ContactSalesLink from '@/components/ContactSalesLink';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -44,9 +41,12 @@ export default function Home({ params }: { params: { lang: Locale } }) {
             <div className="w-full sm:w-auto">
               <DownloadButton lang={params.lang} />
             </div>
-            <button className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition">
+            <ScrollToButton
+              targetId="demo-video"
+              className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition"
+            >
               {t('hero.watchDemo')}
-            </button>
+            </ScrollToButton>
           </div>
           <p className="text-sm text-gray-500 mt-4">
             {t('hero.browserSupport')} | {t('hero.completelyFree')}
@@ -54,16 +54,25 @@ export default function Home({ params }: { params: { lang: Locale } }) {
         </div>
 
         {/* Hero Image/Demo */}
-        <div className="mt-16 relative">
+        <div id="demo-video" className="mt-16 relative">
           <div className="bg-gradient-to-r from-primary-100 to-blue-100 rounded-2xl p-8 shadow-2xl">
-            <div className="bg-white rounded-lg shadow-inner p-6 min-h-[400px] flex items-center justify-center">
-              <div className="text-center text-gray-400">
-                <div className="mb-4 flex justify-center">
-                  <Image src="/favicon.ico" alt="Octopus Crawler" width={64} height={64} />
+            {params.lang === 'zh' ? (
+              <iframe
+                className="w-full border-0"
+                src="//player.bilibili.com/player.html?isOutside=true&aid=115812450959744&bvid=BV1cAiKBGERB&cid=35092695278&p=1"
+                width="100%"
+                height="500"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <div>
+                <div className="text-center text-gray-400">
+                  <div className="mb-4 flex justify-center">
+                    <Image src="/favicon.ico" alt="Octopus Crawler" width={64} height={64} />
+                  </div>
+                  <p className="text-lg">Extension Interface Demo</p>
                 </div>
-                <p className="text-lg">{params.lang === 'zh' ? '插件界面演示区域' : 'Extension Interface Demo'}</p>
-              </div>
-            </div>
+              </div>)}
           </div>
         </div>
       </section>
@@ -150,8 +159,8 @@ export default function Home({ params }: { params: { lang: Locale } }) {
                 <button
                   onClick={() => setIsYearly(false)}
                   className={`relative px-6 py-2 text-sm font-medium rounded-full transition-all duration-200 ${!isYearly
-                      ? 'bg-white text-gray-900 shadow-sm'
-                      : 'text-gray-500 hover:text-gray-700'
+                    ? 'bg-white text-gray-900 shadow-sm'
+                    : 'text-gray-500 hover:text-gray-700'
                     }`}
                 >
                   {t('pricing.billingToggle.monthly')}
@@ -159,8 +168,8 @@ export default function Home({ params }: { params: { lang: Locale } }) {
                 <button
                   onClick={() => setIsYearly(true)}
                   className={`relative px-6 py-2 text-sm font-medium rounded-full transition-all duration-200 ${isYearly
-                      ? 'bg-white text-gray-900 shadow-sm'
-                      : 'text-gray-500 hover:text-gray-700'
+                    ? 'bg-white text-gray-900 shadow-sm'
+                    : 'text-gray-500 hover:text-gray-700'
                     }`}
                 >
                   <div className="flex flex-col items-center">
@@ -207,11 +216,12 @@ export default function Home({ params }: { params: { lang: Locale } }) {
                   ))}
                 </ul>
                 {plan === 'free' ? (
-                  <ScrollToCTAButton
+                  <ScrollToButton
+                    targetId="cta"
                     className="w-full py-2.5 rounded-lg font-semibold transition border-2 border-gray-300 text-gray-700 hover:border-gray-400 text-sm"
                   >
                     {t(`pricing.${plan}.cta`)}
-                  </ScrollToCTAButton>
+                  </ScrollToButton>
                 ) : plan === 'enterprise' ? (
                   <ContactSalesButton
                     className="w-full py-2.5 rounded-lg font-semibold transition border-2 border-gray-300 text-gray-700 hover:border-gray-400 text-sm"
