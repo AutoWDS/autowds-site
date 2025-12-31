@@ -48,9 +48,6 @@ export default function Home({ params }: { params: { lang: Locale } }) {
               {t('hero.watchDemo')}
             </ScrollToButton>
           </div>
-          <p className="text-sm text-gray-500 mt-4">
-            {t('hero.browserSupport')} | {t('hero.completelyFree')}
-          </p>
         </div>
 
         {/* Hero Image/Demo */}
