@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from '@/i18n/utils';
 import { Locale } from '@/i18n/config';
 
@@ -12,8 +11,39 @@ interface DownloadButtonProps {
 
 export default function DownloadButton({ lang, variant = 'hero', textKey }: DownloadButtonProps) {
   const t = useTranslations(lang);
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  
+  // 检测浏览器类型并返回对应的下载链接
+  const detectBrowserAndGetUrl = () => {
+    if (typeof window === 'undefined') {
+      // 服务端渲染时返回默认Chrome链接
+      return 'https://chromewebstore.google.com/detail/octopus-crawler/hcondbfnnboejmehdbegimponkblopho';
+    }
+
+    const userAgent = window.navigator.userAgent;
+    
+    // 检测Firefox - 更精确的匹配
+    if (/Firefox\/[\d.]+/.test(userAgent)) {
+      return 'https://addons.mozilla.org/firefox/addon/octopus-crawler/';
+    }
+    
+    // 检测Edge - 新版Edge使用Edg，老版Edge使用Edge
+    if (/Edg\/[\d.]+/.test(userAgent) || /Edge\/[\d.]+/.test(userAgent)) {
+      return 'https://microsoftedge.microsoft.com/addons/detail/octopus-crawler/nbckdijndlleiongachkolhipiigifec';
+    }
+    
+    // 检测Chrome - 确保是真正的Chrome而不是其他Chromium浏览器
+    if (/Chrome\/[\d.]+/.test(userAgent) && !/Edg\//.test(userAgent) && !/OPR\//.test(userAgent)) {
+      return 'https://chromewebstore.google.com/detail/octopus-crawler/hcondbfnnboejmehdbegimponkblopho';
+    }
+    
+    // 默认返回Chrome链接 (兜底方案，包括Safari、Opera等其他浏览器)
+    return 'https://chromewebstore.google.com/detail/octopus-crawler/hcondbfnnboejmehdbegimponkblopho';
+  };
+
+  const handleDownload = () => {
+    const downloadUrl = detectBrowserAndGetUrl();
+    window.open(downloadUrl, '_blank', 'noopener,noreferrer');
+  };
   
   // 根据变体确定按钮文本和样式
   const getButtonText = () => {
@@ -40,101 +70,20 @@ export default function DownloadButton({ lang, variant = 'hero', textKey }: Down
     }
   };
 
-  const getDropdownPosition = () => {
-    switch (variant) {
-      case 'header':
-        return 'right-0';
-      case 'cta':
-        return 'left-1/2 -translate-x-1/2';
-      default:
-        return 'left-0';
-    }
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen]);
-
-  const browsers = [
-    {
-      name: 'Chrome',
-      iconId: 'icon-chrome',
-      color: 'text-blue-600',
-      url: 'https://chromewebstore.google.com/detail/octopus-crawler/hcondbfnnboejmehdbegimponkblopho',
-      key: 'chrome'
-    },
-    {
-      name: 'Edge',
-      iconId: 'icon-edge',
-      color: 'text-blue-500',
-      url: 'https://microsoftedge.microsoft.com/addons/detail/octopus-crawler/nbckdijndlleiongachkolhipiigifec',
-      key: 'edge'
-    },
-    {
-      name: 'Firefox',
-      iconId: 'icon-firefox',
-      color: 'text-orange-500',
-      url: 'https://addons.mozilla.org/firefox/addon/octopus-crawler/',
-      key: 'firefox'
-    }
-  ];
-
   return (
-    <div className="relative" ref={dropdownRef}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={getButtonClasses()}
+    <button
+      onClick={handleDownload}
+      className={getButtonClasses()}
+    >
+      <span>{getButtonText()}</span>
+      <svg
+        className="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
       >
-        <span>{getButtonText()}</span>
-        <svg
-          className={`w-5 h-5 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      {isOpen && (
-        <div className={`absolute top-full ${getDropdownPosition()} mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-50 overflow-hidden transition-all duration-200`}>
-          {browsers.map((browser) => (
-            <a
-              key={browser.key}
-              href={browser.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 group"
-              onClick={() => setIsOpen(false)}
-            >
-              <div className={`flex-shrink-0 text-2xl ${browser.color}`}>
-                <svg className="icon" aria-hidden="true">
-                  <use xlinkHref={`#${browser.iconId}`}></use>
-                </svg>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="font-semibold text-gray-900">{browser.name}</div>
-                <div className="text-sm text-gray-500">{t(`hero.downloadFor.${browser.key}`)}</div>
-              </div>
-              <svg className="w-5 h-5 text-gray-400 group-hover:text-gray-600 transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          ))}
-        </div>
-      )}
-    </div>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    </button>
   );
 }
-
