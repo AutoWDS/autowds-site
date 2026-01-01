@@ -8,12 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Real-time progress display for scraping operations
+- Add a Stop Collection button to the data collection task page.
 
 ### Changed
 - Improved user interface with modern design elements
 - Optimize the issue where styles cannot be injected across multiple Shadow DOMs
 - Optimize the single-element XPath generation algorithm
+- Optimize the intelligent pagination recognition algorithm.
 
 ## [0.2.0] - 2024-12-01
 
