@@ -65,18 +65,6 @@
 - 网络舆情分析
 - 社会调查研究
 
-## 技术架构
-
-八爪鱼爬虫采用现代化的技术栈开发：
-
-- **前端框架**: React 18 + TypeScript
-- **UI组件库**: Ant Design 5
-- **图形可视化**: Graphin (基于G6)
-- **浏览器扩展**: Plasmo Framework
-- **数据存储**: IndexedDB (Dexie)
-- **任务调度**: Cron Parser
-- **数据导出**: SheetJS (xlsx)
-
 ## 为什么选择八爪鱼爬虫？
 
 ### 🎯 简单易用

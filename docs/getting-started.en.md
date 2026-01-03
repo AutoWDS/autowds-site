@@ -12,16 +12,18 @@ Click the Octopus icon in your browser toolbar to open the extension interface.
 
 ## Step 3: Create Scraping Task
 
-1. Click the "New Task" button
-2. Give your task a name, e.g., "Product Information Scraping"
-3. Click the "Start Selection" button
+1. Click the "Add" button on the "Scraping Tasks" page
+
+![Add Task](./img/add-scraper.png)
 
 ## Step 4: Select Data to Scrape
 
 1. Move your mouse over elements on the webpage, they will be highlighted
 2. Click on the data you want to scrape, e.g., product title
-3. In the popup dialog, name this field, e.g., "Title"
+3. In the popup dialog, select element -> select attribute -> select data
 4. Repeat these steps to select other fields (price, image, etc.)
+
+![Select Field](./img/select-field.png)
 
 ## Step 5: Run Scraping Task
 
@@ -29,11 +31,15 @@ Click the Octopus icon in your browser toolbar to open the extension interface.
 2. Octopus will automatically scrape data from the current page
 3. If you need to scrape multiple pages, enable the "Auto Pagination" feature
 
+![Configure Auto Pagination](./img/pagination.png)
+
 ## Step 6: Export Data
 
-1. After scraping is complete, click the "Export" button
+1. After scraping is complete, click the "Export" button in the "Data Center" page for the scraped data
 2. Choose export format (Excel, CSV, JSON)
 3. Save the file to your local drive
+
+![Export Data](./img/export-data.png)
 
 ## Congratulations!
 

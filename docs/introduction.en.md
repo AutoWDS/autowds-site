@@ -65,18 +65,6 @@ Supports complex data collection scenarios:
 - Online sentiment analysis
 - Social survey research
 
-## Technical Architecture
-
-Octopus Crawler is developed using modern technology stack:
-
-- **Frontend Framework**: React 18 + TypeScript
-- **UI Component Library**: Ant Design 5
-- **Graph Visualization**: Graphin (based on G6)
-- **Browser Extension**: Plasmo Framework
-- **Data Storage**: IndexedDB (Dexie)
-- **Task Scheduling**: Cron Parser
-- **Data Export**: SheetJS (xlsx)
-
 ## Why Choose Octopus Crawler?
 
 ### 🎯 Easy to Use
