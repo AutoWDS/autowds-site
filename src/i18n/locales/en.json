@@ -114,7 +114,7 @@
       "name": "Free",
       "price": "$0",
       "period": "Forever",
-      "features": ["Basic data collection", "100 records/day", "3 scraping tasks", "Community support", "Basic export formats"],
+      "features": ["Basic data collection", "100 records/day", "5 scraping tasks", "Community support", "Basic export formats"],
       "cta": "Get Started"
     },
     "personal": {
@@ -123,7 +123,7 @@
       "yearlyPrice": "$7",
       "period": "per month",
       "yearlyPeriod": "per month (billed yearly)",
-      "features": ["Unlimited data collection", "1,000 records/day", "10 scraping tasks", "Email support", "Standard export formats"],
+      "features": ["Unlimited data collection", "1,000 records/day", "100 scraping tasks", "Email support", "Standard export formats"],
       "cta": "Buy Now"
     },
     "professional": {
