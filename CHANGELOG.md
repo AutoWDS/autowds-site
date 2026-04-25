@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Data export to Google Sheet
+- Data export to database
+
+## [0.4.0] - 2026-04-25
+
+### Added
 - Add a Stop Collection button to the data collection task page.
 - Add a toolbox with XPath selector and regex tools.
 

@@ -16,7 +16,7 @@ export default function DownloadButton({ lang, variant = 'hero', textKey }: Down
   const detectBrowserAndGetUrl = () => {
     if (typeof window === 'undefined') {
       // 服务端渲染时返回默认Chrome链接
-      return 'https://chromewebstore.google.com/detail/octopus-crawler/hcondbfnnboejmehdbegimponkblopho';
+      return 'https://chromewebstore.google.com/detail/octopus-crawler/edokboookdopdndgnhiihmimlljefldp';
     }
 
     const userAgent = window.navigator.userAgent;
@@ -33,11 +33,11 @@ export default function DownloadButton({ lang, variant = 'hero', textKey }: Down
     
     // 检测Chrome - 确保是真正的Chrome而不是其他Chromium浏览器
     if (/Chrome\/[\d.]+/.test(userAgent) && !/Edg\//.test(userAgent) && !/OPR\//.test(userAgent)) {
-      return 'https://chromewebstore.google.com/detail/octopus-crawler/hcondbfnnboejmehdbegimponkblopho';
+      return 'https://chromewebstore.google.com/detail/octopus-crawler/edokboookdopdndgnhiihmimlljefldp';
     }
     
     // 默认返回Chrome链接 (兜底方案，包括Safari、Opera等其他浏览器)
-    return 'https://chromewebstore.google.com/detail/octopus-crawler/hcondbfnnboejmehdbegimponkblopho';
+    return 'https://chromewebstore.google.com/detail/octopus-crawler/edokboookdopdndgnhiihmimlljefldp';
   };
 
   const handleDownload = () => {
