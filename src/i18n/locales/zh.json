@@ -119,8 +119,8 @@
     },
     "personal": {
       "name": "个人版",
-      "price": "¥59",
-      "yearlyPrice": "¥47",
+      "price": "¥29",
+      "yearlyPrice": "¥25",
       "period": "每月",
       "yearlyPeriod": "每月（年付）",
       "features": ["无限数据采集", "每日 1000 条数据", "100 个采集任务", "邮件支持", "标准导出格式"],
@@ -129,7 +129,7 @@
     "professional": {
       "name": "专业版",
       "price": "¥99",
-      "yearlyPrice": "¥79",
+      "yearlyPrice": "¥80",
       "period": "每月",
       "yearlyPeriod": "每月（年付）",
       "features": ["无限数据采集", "无限采集任务", "云端存储", "定时任务", "优先技术支持", "高级导出选项", "API 接口"],
