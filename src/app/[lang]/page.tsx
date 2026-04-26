@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Locale } from '@/i18n/config';
 import { useTranslations } from '@/i18n/utils';
@@ -21,7 +20,6 @@ export function generateStaticParams() {
 
 export default function Home({ params }: { params: { lang: Locale } }) {
   const t = useTranslations(params.lang);
-  const router = useRouter();
   const [isYearly, setIsYearly] = useState(false);
 
   return (
@@ -212,7 +210,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
                   </ContactSalesButton>
                 ) : (
                   <button
-                    onClick={() => router.push(`/cloud/pay?plan=${plan}&billing=${isYearly ? 'yearly' : 'monthly'}`)}
+                    onClick={() => window.location.href = `/cloud/pay?plan=${plan}&billing=${isYearly ? 'yearly' : 'monthly'}`}
                     className="w-full py-2.5 rounded-lg font-semibold transition bg-gradient-to-r from-primary-600 to-blue-500 text-white hover:shadow-lg text-sm"
                   >
                     {t(`pricing.${plan}.cta`)}
