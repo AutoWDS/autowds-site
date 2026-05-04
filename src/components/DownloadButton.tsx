@@ -28,7 +28,7 @@ export default function DownloadButton({ lang, variant = 'hero', textKey }: Down
     
     // 检测Edge - 新版Edge使用Edg，老版Edge使用Edge
     if (/Edg\/[\d.]+/.test(userAgent) || /Edge\/[\d.]+/.test(userAgent)) {
-      return 'https://microsoftedge.microsoft.com/addons/detail/octopus-crawler/nbckdijndlleiongachkolhipiigifec';
+      return 'https://microsoftedge.microsoft.com/addons/detail/autowds/nbckdijndlleiongachkolhipiigifec';
     }
     
     // 检测Chrome - 确保是真正的Chrome而不是其他Chromium浏览器
